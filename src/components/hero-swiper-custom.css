@@ -1,0 +1,33 @@
+.swiper-pagination-bullet {
+  background: #f8bcbc !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #e57373 !important;
+}
+
+.testimonial-swiper-pagination {
+  display: flex !important;
+  flex-direction: row !important;
+  /* Change to row for horizontal layout */
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 60px;
+  gap: 8px;
+  margin-right: 0 !important;
+}
+
+.testimonial-swiper-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #eab8b2 !important;
+  opacity: 1 !important;
+  margin: 0 4px !important;
+
+  transition: background 0.3s;
+}
+
+.testimonial-swiper-pagination .swiper-pagination-bullet-active {
+  background: #b7342b !important;
+}
