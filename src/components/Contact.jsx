@@ -62,7 +62,7 @@ const Contact = () => {
 *الهاتف:* ${formData.phone}%0A
 *الرسالة:*%0A${formData.message}`;
 
-    window.open(`https://wa.me/201096266316?text=${whatsappMessage}`, '_blank');
+    window.open(`https://wa.me/201229417417?text=${whatsappMessage}`, '_blank');
     
     setIsSubmitted(true);
     setFormData({

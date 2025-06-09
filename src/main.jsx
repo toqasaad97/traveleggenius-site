@@ -12,6 +12,7 @@ import Saudi from './components/saudia';
 import QatarVisaTypes from './components/qatar';
 import UAE from './components/uae';
 import Muscat from './components/muscat';
+import Branches from './components/Branches';
 
 const queryClient = new QueryClient();
 
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
       },
       { path: "/emirates", element: <UAE /> },
       { path: "/masqat", element: <Muscat /> },
-
+      { path: "/branches", element: <Branches /> },
     ]
   },
 ]);

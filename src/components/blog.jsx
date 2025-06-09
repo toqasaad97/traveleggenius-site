@@ -136,7 +136,7 @@ function Blog() {
           <div className="text-center mb-8">
 
             <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: "#262751" }}>
-              دليل شامل لخدمات التأشيرات في 2024
+              دليل شامل لخدمات التأشيرات 
             </h2>
           </div>
 

@@ -54,6 +54,7 @@ export default function ArabicNavbar() {
     },
     { label: "كيف أحصل على التأشيرة؟", to: "/visa-info" },
     { label: "بوابة التأشيرات", to: "/blog" },
+    { label: "فروعنا", to: "/branches" },
     { label: "تواصل معنا", to: "/contact" }, // Changed from path to to for consistency
   ];
 
@@ -71,6 +72,7 @@ export default function ArabicNavbar() {
     },
     { label: "كيف أحصل على التأشيرة؟", path: "/visa-info" },
     { label: "بوابة التأشيرات", path: "/blog" },
+    { label: "فروعنا", path: "/branches" },
     { label: "تواصل معنا", path: "/contact" }, // Simplified structure
     { label: "تقديم الطلب", path: "/apply-visa", isCta: true }
   ];
