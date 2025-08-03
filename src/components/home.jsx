@@ -18,7 +18,7 @@ function Home() {
   return (
     <div className="font-poppins">
       <HeroSection/>
-      <CountryMarqueeSection/>
+      {/* <CountryMarqueeSection/> */}
       <ServicesSection/>
       <TestimonialsSection/>
       <VisaSection/>

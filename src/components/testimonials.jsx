@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -6,6 +7,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 const TestimonialsSection = () => {
+  const navigate = useNavigate();
   const visaItems = [
     { image: "/assets/images/t1.jpeg" },
     { image: "/assets/images/t2.jpeg" },
@@ -43,11 +45,18 @@ const TestimonialsSection = () => {
           >
             {visaItems.map((item, index) => (
               <SwiperSlide key={index}>
-                <div className="flex justify-center items-center h-full">
+                <div 
+                  className="flex justify-center items-center h-full cursor-pointer"
+                  onClick={() => {
+                    navigate('/apply-visa');
+                    // Scroll to top of the page
+                    window.scrollTo(0, 0);
+                  }}
+                >
                   <img
                     src={item.image}
                     alt={`تأشيرة ${index + 1}`}
-                    className="mx-auto max-h-[70vh] w-auto object-contain rounded-lg shadow-md"
+                    className="mx-auto max-h-[70vh] w-auto object-contain rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
                     loading="lazy"
                   />
                 </div>

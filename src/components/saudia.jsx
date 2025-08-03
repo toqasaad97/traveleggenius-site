@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Saudi = () => {
   const visaTypes = [
@@ -65,15 +66,20 @@ const Saudi = () => {
       {/* Cards Section */}
       <div className="max-w-6xl mx-auto px-6 pb-16">
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {visaTypes.map(({ title, description }, idx) => (
-            <div
-              key={idx}
-              className="bg-[#F9FAFB] border border-[#E5E7EB] p-5 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300"
-            >
-              <h3 className="text-lg font-bold mb-2 text-[#1A2255]">{title}</h3>
-              <p className="text-sm text-[#4B5563] leading-relaxed">{description}</p>
-            </div>
-          ))}
+          {visaTypes.map(({ title, description }, idx) => {
+            const navigate = useNavigate();
+            return (
+              <div
+                key={idx}
+                onClick={() => navigate(`/apply-visa?visaType=${encodeURIComponent(title)}&country=السعودية`)}
+                className="bg-[#F9FAFB] border border-[#E5E7EB] p-5 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer hover:border-[#1A84C4] hover:border-2"
+                style={{ cursor: 'pointer' }}
+              >
+                <h3 className="text-lg font-bold mb-2 text-[#1A2255]">{title}</h3>
+                <p className="text-sm text-[#4B5563] leading-relaxed">{description}</p>
+              </div>
+            );
+          })}
         </div>
 
         <p className="mt-12 text-center text-sm text-gray-600 max-w-3xl mx-auto leading-relaxed">

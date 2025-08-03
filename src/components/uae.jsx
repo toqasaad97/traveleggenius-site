@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const UAE = () => {
+  const navigate = useNavigate();
+
   const visaTypes = [
     {
       title: "تأشيرة سياحية",
@@ -21,6 +24,26 @@ const UAE = () => {
       title: "تأشيرة تجارية",
       description:
         "موجهة للأشخاص الذين يزورون الإمارات لحضور اجتماعات أو فعاليات تجارية.",
+    },
+    {
+      title: "تأشيرة طالب",
+      description:
+        "مخصصة للطلاب المسجلين في المؤسسات التعليمية في الإمارات، وتكون صالحة طوال فترة الدراسة.",
+    },
+    {
+      title: "تأشيرة علاج طبي",
+      description:
+        "تُمنح للأشخاص القادمين لتلقي العلاج الطبي في المستشفيات والمراكز الطبية في الإمارات.",
+    },
+    {
+      title: "تأشيرة عبور",
+      description:
+        "للمسافرين العابرين عبر الإمارات إلى وجهة أخرى، وتكون صالحة لمدة 96 ساعة.",
+    },
+    {
+      title: "تأشيرة إقامة طويلة الأمد",
+      description:
+        "مخصصة للمستثمرين وأصحاب المواهب والمهنيين ذوي المهارات العالية.",
     },
     {
       title: "تأشيرة طالب",
@@ -68,7 +91,9 @@ const UAE = () => {
           {visaTypes.map(({ title, description }, idx) => (
             <div
               key={idx}
-              className="bg-[#F9FAFB] border border-[#E5E7EB] p-5 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300"
+              onClick={() => navigate(`/apply-visa?visaType=${encodeURIComponent(title)}&country=الإمارات`)}
+              className="bg-[#F9FAFB] border border-[#E5E7EB] p-5 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer hover:border-[#1A84C4] hover:border-2"
+              style={{ cursor: 'pointer' }}
             >
               <h3 className="text-lg font-bold mb-2 text-[#1A2255]">{title}</h3>
               <p className="text-sm text-[#4B5563] leading-relaxed">{description}</p>

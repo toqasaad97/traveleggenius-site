@@ -97,7 +97,11 @@ export default function ArabicNavbar() {
             {desktopMenu.map((item, index) => (
               <div key={index} className="relative group">
                 {item.subItems ? (
-                  <>
+                  <div 
+                    className="relative group"
+                    onMouseEnter={() => setActiveDropdown(item.label)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
                     <button
                       onClick={() => toggleDropdown(item.label)}
                       className="flex items-center px-5 py-4 text-[#F0F4F8] hover:text-white transition-colors duration-200 font-normal text-[16px] hover:bg-[#1A84C4]/30"
@@ -108,8 +112,8 @@ export default function ArabicNavbar() {
                       />
                     </button>
                     <div
-                      className={`absolute top-full right-0 mt-1 w-72 bg-white rounded-md shadow-lg overflow-hidden transition-all duration-300 origin-top ${activeDropdown === item.label ? "scale-y-100 opacity-100" : "scale-y-95 opacity-0 invisible"}`}
-                      style={{ zIndex: 50 }}
+                      className={`absolute top-full right-0 mt-1 w-72 bg-white rounded-md shadow-lg overflow-hidden transition-all duration-300 origin-top ${activeDropdown === item.label ? "scale-y-100 opacity-100 visible" : "scale-y-95 opacity-0 invisible"}`}
+                      style={{ zIndex: 50, transitionProperty: 'opacity, transform, visibility' }}
                     >
                       <div className="py-2">
                         {item.subItems.map((subItem, subIndex) => (
@@ -124,7 +128,7 @@ export default function ArabicNavbar() {
                         ))}
                       </div>
                     </div>
-                  </>
+                  </div>
                 ) : (
                   <Link
                     to={item.to}

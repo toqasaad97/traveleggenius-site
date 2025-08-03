@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const QatarVisaTypes = () => {
+  const navigate = useNavigate();
   const visaTypes = [
     {
       title: "تأشيرة سياحية",
@@ -42,6 +44,7 @@ const QatarVisaTypes = () => {
       description:
         "تُمنح لفئات معينة مثل المستثمرين أو أصحاب المهارات العالية، وفق شروط محددة من الحكومة القطرية.",
     },
+    
   ];
 
   return (
@@ -50,34 +53,38 @@ const QatarVisaTypes = () => {
       <div className="relative h-72 md:h-96 mb-16">
         <img
           src="/assets/images/qatar.jpg"
-          alt="تأشيرات قطر"
+          alt="قطر"
           className="absolute inset-0 w-full h-full object-cover rounded-b-xl"
         />
         <div className="absolute inset-0 bg-black/50 rounded-b-xl"></div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
           <h2 className="text-4xl font-bold mb-4">أنواع تأشيرات دولة قطر</h2>
           <p className="text-sm max-w-2xl">
-            تعرف على خيارات التأشيرات المختلفة التي توفرها دولة قطر حسب غرض زيارتك.
+            تعرف على الأنواع المختلفة للتأشيرات المتاحة للسفر إلى قطر.
           </p>
         </div>
       </div>
 
-      {/* Cards Grid */}
+      {/* Visa Types Grid */}
       <div className="max-w-6xl mx-auto px-6 pb-16">
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {visaTypes.map(({ title, description }, idx) => (
             <div
               key={idx}
-              className="bg-[#F9FAFB] border border-[#E5E7EB] p-5 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300"
+              onClick={() => navigate(`/apply-visa?visaType=${encodeURIComponent(title)}&country=قطر`)}
+              className="bg-[#F9FAFB] border border-[#E5E7EB] p-5 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer hover:border-[#1A84C4] hover:border-2"
+              style={{ cursor: 'pointer' }}
             >
               <h3 className="text-lg font-bold mb-2 text-[#1A2255]">{title}</h3>
-              <p className="text-sm text-[#4B5563] leading-relaxed">{description}</p>
+              <p className="text-sm text-[#4B5563] leading-relaxed">
+                {description}
+              </p>
             </div>
           ))}
         </div>
 
         <p className="mt-12 text-center text-sm text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          تختلف متطلبات الحصول على كل نوع من أنواع التأشيرات حسب الغرض من الزيارة ومدتها. للحصول على معلومات دقيقة ومحدثة، يُرجى مراجعة الموقع الرسمي لوزارة الداخلية القطرية أو السفارة القطرية في بلدك.
+          تختلف متطلبات وإجراءات الحصول على التأشيرة حسب نوعها وجنسية مقدم الطلب. يُنصح بالتحقق من أحدث المعلومات من المصادر الرسمية قبل التقديم.
         </p>
       </div>
     </section>

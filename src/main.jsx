@@ -4,7 +4,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import App from './App';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Home from './components/home';
-import VisaForm from './components/vosaForm';
+import VisaForm from './components/NewVisaForm';
 import VisaInfoArabic from './components/visaInfo';
 import Blog from './components/blog';
 import Contact from './components/Contact';

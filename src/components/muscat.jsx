@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Muscat = () => {
+  const navigate = useNavigate();
   const visaTypes = [
     {
       title: "تأشيرة سياحية",
@@ -68,7 +70,9 @@ const Muscat = () => {
           {visaTypes.map(({ title, description }, idx) => (
             <div
               key={idx}
-              className="bg-[#F9FAFB] border border-[#E5E7EB] p-5 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300"
+              onClick={() => navigate(`/apply-visa?visaType=${encodeURIComponent(title)}&country=مسقط`)}
+              className="bg-[#F9FAFB] border border-[#E5E7EB] p-5 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer hover:border-[#1A84C4] hover:border-2"
+              style={{ cursor: 'pointer' }}
             >
               <h3 className="text-lg font-bold mb-2 text-[#1A2255]">{title}</h3>
               <p className="text-sm text-[#4B5563] leading-relaxed">{description}</p>
